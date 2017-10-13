@@ -13,7 +13,7 @@ Releasing the focus:
 // If you don't specify an element to which to restore the focus to. 
 // The script will determine the first focusable element in the document 
 // and restore the focus to that element.
-FocusTrap.trap(document.getElementById("a-container-element"));
+FocusTrap.release();
 ```
 
 ### Restoring focus to the element which triggered the trap
