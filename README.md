@@ -1,5 +1,5 @@
 # FocusTrap
-Traps the focus within an specified element. This, for example, can be used to trap the focus within a dialog.
+Traps the focus within a specified element. This, for example, can be used to trap the focus within a dialog.
 
 ## Usage
 
@@ -10,7 +10,9 @@ FocusTrap.trap(document.getElementById("a-container-element"));
 ```
 Releasing the focus:
 ```javascript
-// If you don't specify an element to which to restore the focus to. The script will determine the first focusable element in the document and restore the focus to that element.
+// If you don't specify an element to which to restore the focus to. 
+// The script will determine the first focusable element in the document 
+// and restore the focus to that element.
 FocusTrap.trap(document.getElementById("a-container-element"));
 ```
 
