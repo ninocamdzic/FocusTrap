@@ -2,8 +2,7 @@
 * FocusTrap v0.1.0
 * Copyright(c) Nino Camdzic 2017
 *
-* Traps the focus within an specified element. This can be used to trap the
-* focus within a dialog.
+* Traps the focus within an specified element.
 */
 (function(document) {
 	const NS = window.FocusTrap = window.FocusTrap || {};
