@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#dialog {
+				position: absolute;
+				top: 50px;
+				left: 50px;
+				width: 300px;
+				padding: 10px;
+				background-color: #C0C0C0;
+				box-shadow: 5px 5px 5px #888;
+				display: none;
+			}
+			
+			#dialog > * {
+				display: block;
+			}
+			
+			#dialog h2 {
+				margin: 0;
+			}
+			
+			#dialog input[type="text"] {
+				width: 100%;
+				box-sizing: border-box;
+			}
+			
+			#dialog > div {
+				margin-top: 10px;
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>FocusTrap Demo</h1>
+		<p>Click 'Open Dialog' and try to tab trough the elements or click outside the dialog.</p>
+		<div>
+			<input type="text" value="Test Text" />
+			<a href="#">Test link</a>
+			<input type="button" value="Test Button" id="test-button" />
+			<input type="button" value="Open Dialog" id="open-dialog" />
+		</div>
+		<div id="dialog">
+			<h2>Example dialog</h2>
+			<label for="pname">Name:</label>
+			<input type="text" id="pname" />
+			<label for="psurename">Last name:</label>
+			<input type="text" id="psurename" />
+			<label for="pemail">E-mail:</label>
+			<input type="text" id="pemail" />
+			<div>
+				<a href="#">Help</a>
+				<input type="button" value="OK" />
+				<input type="button" value="Cancel" id="cancel-dialog" />
+			</div>
+		</div>
+		<script src="focustrap.js"></script>
+		
+		<!-- Popup sepcific code. -->
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				let dialog = document.getElementById("dialog");
+				let openButton = document.getElementById("open-dialog");
+				let cancelButton = document.getElementById("cancel-dialog");
+				
+				openButton.addEventListener("click", function() {
+					dialog.setAttribute("style", "display: block");
+					let active = FocusTrap.trap(dialog, this);
+					console.log("Trap active: " + active);
+				});
+				
+				cancelButton.addEventListener("click", function() {
+					dialog.setAttribute("style", "display: none");
+					FocusTrap.release();
+				});
+			});
+		</script>
+	</body>
+</html>
