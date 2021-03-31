@@ -1,4 +1,4 @@
-# FocusTrap
+# Focus Trap
 Traps the focus within a specified element. This, for example, can be used to trap the focus within a dialog.
 
 ## Setup
